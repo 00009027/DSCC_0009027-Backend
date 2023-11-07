@@ -11854,24 +11854,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/sakhib/.nuget/packages/": {}
+    "C:\\Users\\khaki\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/sakhib/Developer/00010023/dcc-ff/API/WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\khaki\\OneDrive\\Рабочий стол\\dcc-ff\\api\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "/Users/sakhib/Developer/00010023/dcc-ff/API/WebApplication1.csproj",
-      "packagesPath": "/Users/sakhib/.nuget/packages/",
-      "outputPath": "/Users/sakhib/Developer/00010023/dcc-ff/API/obj/",
+      "projectPath": "C:\\Users\\khaki\\OneDrive\\Рабочий стол\\dcc-ff\\api\\WebApplication1.csproj",
+      "packagesPath": "C:\\Users\\khaki\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\khaki\\OneDrive\\Рабочий стол\\dcc-ff\\api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/sakhib/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\khaki\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -11938,7 +11940,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/nix/store/w9yxacsbckc2q5w01ryaxc26nb3r51nk-dotnet-sdk-6.0.416/sdk/6.0.416/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
