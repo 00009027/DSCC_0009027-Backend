@@ -53,15 +53,27 @@ namespace WebApplication1.Controllers
         // PUT: api/Employees/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutEmployee(int id, Employee employee)
+        public async Task<IActionResult> PutEmployee(int id, EmployeeMethodDto employeeMethodDto)
         {
-            if (id != employee.Id)
+            if (_context.Employees == null)
             {
-                return BadRequest();
+                return Problem("Entity set 'Employee'  is null.");
+            }
+            
+            var employee = await _context.Employees.FindAsync(id);
+            
+            if (employee == null)
+            {
+                return NotFound();
             }
 
+            employee.Name = employeeMethodDto.Name;
+            employee.PhoneNumber = employeeMethodDto.PhoneNumber;
+            employee.Email = employeeMethodDto.Email;
+            employee.Department = employeeMethodDto.Department;
+            
             _context.Entry(employee).State = EntityState.Modified;
-
+            
             try
             {
                 await _context.SaveChangesAsync();
@@ -79,17 +91,27 @@ namespace WebApplication1.Controllers
             }
 
             return NoContent();
+
         }
 
         // POST: api/Employees
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Employee>> PostEmployee(Employee employee)
+        public async Task<ActionResult<Employee>> PostEmployee([FromBody] EmployeeMethodDto employeeMethodDto)
         {
           if (_context.Employees == null)
           {
               return Problem("Entity set 'ApplicationDbContext.Employees'  is null.");
           }
+
+          var employee = new Employee
+          {
+            Name = employeeMethodDto.Name,
+            PhoneNumber = employeeMethodDto.PhoneNumber,
+            Email = employeeMethodDto.Email,
+            Department = employeeMethodDto.Department
+          };
+          
             _context.Employees.Add(employee);
             await _context.SaveChangesAsync();
 
